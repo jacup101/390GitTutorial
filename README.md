@@ -32,12 +32,14 @@ Next, lets install Git. On Windows, I would recommend installing Git Bash, as it
 On Linux, installing is as simple as running: sudo apt install git-all.
 
 ![](https://lh6.googleusercontent.com/zZFuZOVOYs3kLow9ywRavDmnA0QK6U-BROMw-1273z_HXLrbbtpKc8ufuzDbB_vtKG3GtPJTqZtl7wbJiu6_fk1PzfxzYeNE7kE74hclZRIdD0MyNkQkmBzLsdQqXR_hkgjUfyFD)
+
 On Mac, if you have homebrew installed, you can run brew install git. Informations for installing homebrew, as well as alternative install methods, can be found [here](https://git-scm.com/download/mac)
 
 ### On To Terminal
 Once Git is installed, first check that it has successfully installed by running `git --version`, as shown in the screenshot below. It should output “git version X.XX.X”, depending on the version number.
 
 ![](https://lh4.googleusercontent.com/gyF7_Tl70wEEtTc8VUfOSaMjfJ_c01t5UhGjTy3CDiw3NxQyqOSa4P0bX-WxiY0RwprjZqKrDNyOv4gkkSAbWFF7jxraQWSdgGhefNzBT28TkFsPf9butoqe6HmHVPdRMNymaJ49)
+
 Before we do anything with git, there are still a couple of setup steps. We’ll first tell git who we are by adjusting the configuration email and name, using the following commands.
 ```
 git config --global user.name “your name”
@@ -121,9 +123,11 @@ Finally, we will push the changes to our local repository to the remote reposito
 git push origin main
 ```
 ![](https://lh5.googleusercontent.com/B9EbSdqTibYw27dIccKWQ31t9hu0g9LUqjk4angpUZsSr1kZ9agVfLyDFD_DRcCVgmvU0fD8zr_x1-IuwI14AU1-PgNL7xrp5JeNIXQuY8xWVj5BMcmLCFdHrtNlMl7Yv6cFSXmK)
+
 Note that when pushing, you will be prompted for a username and password, which git uses to verify you have permissions to push to this remote repository. The username should be your github username, which for me is jacup101, and password is the __personal access token__ you created earlier, ***NOT your github.com password***. Also, your password will not show up when you type, but this is normal, just copy and paste your personal access token (ctrl-v or shift-insert), and then hit enter.
 
 Now, if we check our github repository online, we should see our files on the main branch.
+
 ![](https://lh4.googleusercontent.com/fFjUQkHc7BdFH4P9MWyHU70ELgOg81APOCINjQc3LNByX0jOP7VijeGpoBvW3BQgJuSryYbg_yE9UEBfUfU9--Ox3uuODr-uMJ6cI_Y90Du5xVhSNYmIrCG6VvrZmG_PRhnff5up)
 
 Next, we’ll cover how to pull changes to our code that others might make.
@@ -138,6 +142,7 @@ Now, we’ll pull those changes from the remote repository to our local reposito
 git pull origin main
 ```
 If successful, running ```cat script.py``` will show the new script.
+
 ![](https://lh6.googleusercontent.com/mttD9kN-ceUo_F98l6NdK8WyEscpLlH8fuxMn_hjyOCy2xT7k-z9nREeYjkmHIiJ12vNEXS0UuFjk6wfdFQVmrJlmwYSN2bUwkFCcfB_ODaBgxb2-puP2-VizqH_fMF-Yp9MGPpq)
 
 Now that we know the basic features of Github, we'll talk about some of the features that make it so powerful.
@@ -148,6 +153,7 @@ Often when working on a project, many features are being implemented at once, se
 The diagram below shows how branches work, at a high level:
 
 ![](https://lh5.googleusercontent.com/DEFPLO-imwNk9wsg5IS2418pDJBipBOi0tUC-vRMZecLpNCtYEkeVXoB0i5JXg5UkS1UjbT95vfZsU-THWOeew1vZf47CRW1q6AYrYwKR4yvCXZts1VXQqTbxtmiTxZ5p2NsqINU)
+
 <sub>Image credit: [nobledesktop.com](https://www.nobledesktop.com/learn/git/git-branches)</sub>
 
 First, we will start by creating our own branch, using the git branch command. We will create a separate branch, called niceDay, to add a line that says “Have a nice day” after saying goodbye. We do so using the following commands:
@@ -156,7 +162,9 @@ git branch niceDay
 git checkout niceDay
 ```
 The git branch command creates the branch niceDay, and the git checkout command changes the current branch we are working on from main to our newly created niceDay branch. The `git checkout -b niceDay` shortcut could also be used, to only have to run a single command.
+
 ![](https://lh4.googleusercontent.com/QFwF9dgnB76sydhXOheLYk9J6p9VQ_od78GR_YLk-i2r30J4bRvOTrxN6PLIQqep4vdMrqPyfTepAK2FwQDi2AxG-wweaxANbd3gojYJtcD9Wd_iLOIi33rsUBMkZOIixioQX6MU)
+
 Using your preferred text editor (I’ll use vim, but any other works), add the following lines of code to the beginning and end of script.py.
 ```
 print(“Welcome to the Goodbye Program”)
@@ -164,6 +172,7 @@ print(“Welcome to the Goodbye Program”)
 print(“Have a nice day”)
 ```
 ![](https://lh3.googleusercontent.com/8Yu-ITA8axdehk5arW9Mm0m14JMxhMWKbJaw0eKR6yYGiSFS0nR6mwnz77ALFuAOfsnRdjMmxWhatOaZ_YCX7cmqTNXXqz43qpVMfm63EwfC_CsFxejLZ7FRGU916dyfgjquQR54)
+
 Then, add, commit, and push the file, using the following commands like before.
 ```
 git add script.py
@@ -187,6 +196,7 @@ git checkout main
 git merge niceDay
 ```
 ![](https://lh3.googleusercontent.com/hR13vskv3I2zkJaNfv0XFX2e8LJKrU8r-hp5Be43qBEHNQAPnxq_IVWaSEKzw7Mw4I6pOPoazSJKZuhlPwlUvTG0LuOdFNeXhS15gNdNTP4Wuv2t_kljd6FCtkTfN_fMPNw14-ak)
+
 From here, we can add, commit, and push to main branch, much like we did with the niceDay branch.
 ### Merge Conflicts
 Something important to note when merging is that __merge conflicts__ can occur, which is when the two branches have both edited the same line. These are resolvable, but may be difficult to work with at first. In our case, since we did not change any lines across the two branches, there was no conflict.
@@ -195,13 +205,16 @@ Something important to note when merging is that __merge conflicts__ can occur, 
 On occasion, you may want to make changes to another branch, or pull the most recent changes, but are not ready to commit the work you are currently working on. You could copy the files to another folder and move them back later, but a much easier way of doing this is by using the git stash command.
 
 Let’s start by adding a line to our script.py. I added testVar=”test”, but you can add whatever you’d like.
+
 ![](https://lh6.googleusercontent.com/qlSAptHFFaeynEM6bQgmIWBKY6HtrDdk9M70IfFE6T1Zu33FmyoN5eGz99kEoS-DNqHvLC5lhEmaVLjJX1xnUD6bKkey5jRDc9JggEWuntu5UWF3ftwDaRkjaOMaX3eNwStuLlae)
+
 Now we run the following commands.
 ```
 git stash script.py
 cat script.py
 ```
 ![](https://lh6.googleusercontent.com/mLiSn9i4E_990I1zGxUEsM0r3iBawNiQz-c5pjpU_uBuCUpEQTTWICG6u8a_2Axe3dJtHkrgGZbFAVIR8Xm1GjXlNGB7ZMXqP_TNU87GFTb5VNQ8T12bTve_Z5a7imthbOCGNmve)
+
 You’ll notice that our changes have disappeared. We can now do whatever we need to, such as swap branches to work on a separate feature, pull recent changes, and anything else.
 Let’s now get the changes back. We’ll run the following commands:
 ```
