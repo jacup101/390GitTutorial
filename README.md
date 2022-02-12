@@ -36,6 +36,7 @@ On Mac, if you have homebrew installed, you can run brew install git. Informatio
 
 ### On To Terminal
 Once Git is installed, first check that it has successfully installed by running `git --version`, as shown in the screenshot below. It should output “git version X.XX.X”, depending on the version number.
+
 ![](https://lh4.googleusercontent.com/gyF7_Tl70wEEtTc8VUfOSaMjfJ_c01t5UhGjTy3CDiw3NxQyqOSa4P0bX-WxiY0RwprjZqKrDNyOv4gkkSAbWFF7jxraQWSdgGhefNzBT28TkFsPf9butoqe6HmHVPdRMNymaJ49)
 Before we do anything with git, there are still a couple of setup steps. We’ll first tell git who we are by adjusting the configuration email and name, using the following commands.
 ```
